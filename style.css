@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("kepek/hatter1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+main {
+    background-color: #eee;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "_header _header"
+                         "_nav _nav"
+                         "_article _aside"
+                         "_footer _footer";
+}
+
+header {
+    grid-area: _header;
+
+}
+header h1 {
+    letter-spacing: 5px;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+nav {
+    grid-area: _nav;
+    background-color: green;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    padding: 5px;
+}
+nav ul li a, nav ul li a:visited{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+nav ul li a:hover, nav ul li a:active {
+    background-color: rgb(1, 189, 1);
+}
+
+article {
+    margin: 15px;
+    grid-area: _article;
+}
+article h2 {
+    border-bottom: 5px solid green;
+}
+article ul {
+    list-style-type: decimal;
+    
+}
+article img {
+    float: right;
+    width: 200px;
+    border: 1px solid grey;
+    padding: 5px;
+    margin-left: 12px;
+    border-radius: 5px;
+}
+
+aside {
+    grid-area: _aside;
+}
+aside img {
+    width: 100%;
+}
+
+footer {
+    grid-area: _footer;
+    background-color: green;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px){
+    main {
+        width: 100%;
+        margin: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas: "_header"
+                         "_nav"
+                         "_article"
+                         "_aside"
+                         "_footer";
+    }    
+}
